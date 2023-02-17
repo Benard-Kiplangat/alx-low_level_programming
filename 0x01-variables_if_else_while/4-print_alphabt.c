@@ -1,6 +1,6 @@
 /*
  * File: 4-print_alphabt.c
- * Auth:Benard Kiplangat 
+ * Auth: Benard Kiplanga
  */
 
 #include <stdio.h>
