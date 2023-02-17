@@ -1,6 +1,6 @@
 /*
  * File: 102-print_comb5.c
- * Auth:Benard Kiplangat 
+ * Auth: Benard Kiplangat
  */
 
 #include <stdio.h>
