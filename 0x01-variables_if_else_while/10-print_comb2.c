@@ -14,7 +14,7 @@ int main(void)
 {
 	int digit1, digit2 = 0;
 
-	for (; digit1 < 10; digit1++)
+	for (digit1 = 0; digit1 < 10; digit1++)
 	{
 		while (digit2 < 10; ++digit2)
 		{
@@ -23,7 +23,6 @@ int main(void)
 
 			if (digit1 == 9 && digit2 == 9)
 				break;
-
 			putchar(',');
 			putchar(' ');
 		}
