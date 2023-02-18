@@ -1,6 +1,6 @@
 /*
  * File: 4-print_alphabt.c
- * Auth: Benard Kiplanga
+ * Auth: Benard Kiplangat
  */
 
 #include <stdio.h>
@@ -16,7 +16,7 @@ int main(void)
 
 	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		if (letter != 'e' && letter != 'q')
+		if (letter !('e' || 'q')
 			putchar(letter);
 	}
 
