@@ -23,8 +23,10 @@ int main(void)
 			putchar(digit1 + '0');
 			putchar(digit2 + '0');
 			if (digit1 < 9)
+			{
 				putchar(',');
 				putchar(' ');
+			}
 		}
 	}
 
