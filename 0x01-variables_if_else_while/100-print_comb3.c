@@ -22,10 +22,9 @@ int main(void)
 				continue;
 			putchar(digit1 + '0');
 			putchar(digit2 + '0');
-			if (digit1 == 9 && digit2 == 9)
-				continue;
-			putchar(',');
-			putchar(' ');
+			if (digit1 < 9)
+				putchar(',');
+				putchar(' ');
 		}
 	}
 
