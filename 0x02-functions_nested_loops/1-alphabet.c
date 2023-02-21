@@ -1,26 +1,19 @@
-void print_alphabet(void);
 /*
  * File: 1-alphabet.c
- * Auth: Benard Kiplangat
+ * Auth: Brennan D Baraban
  */
 
-#include "main.h"
+#include "holberton.h"
 
 /**
- * main -  prints the alphabet, in lowercase, followed by a new line.
- * @c: first parameter - an input character for _putchar function.
- * Return: Always 0.
+ * print_alphabet - prints the alphabet in lowercase, followed by a new line.
  */
-
-/*parameter c is an input character for _putchar function.*/
-int _putchar(char c);
-
-int main(void)
+void print_alphabet(void)
 {
-	for (char i = 'a'; i < 'z'; i++)
-	{
-		_putchar(i);
-		_putchar('\n');
-	}
-return (0);
+	char letter;
+
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
+
+	_putchar('\n');
 }
