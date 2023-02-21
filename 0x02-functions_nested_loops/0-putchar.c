@@ -7,11 +7,12 @@
 
 /**
  * main -  prints _putchar, followed by a new line.
- *
+ * @c: first parameter - an input character for _putchar function.
  * Return: Always 0.
  */
 
-int _putchar(char c);
+/*parameter c is an input character for _putchar function.*/
+int _putchar(/*IN*/ char c);
 
 int main(void)
 {
