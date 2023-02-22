@@ -1,9 +1,9 @@
 /*
  * File: 10-add.c
- * Auth: Brennan D Baraban
+ * Auth: Ben
  */
 
-#include "holberton.h"
+#include "main.h"
 
 /**
  * add - Adds two integers.
