@@ -7,8 +7,11 @@
  */
 int _isupper(int c)
 {
-	if (_isupper(c))
-		return (1);
+	int isup;
+	int isupper(int a);
+	if (isupper(c))
+		isup = 1;
 	else
-		return (0);
+		isup = 0;
+	return (isup);
 }
