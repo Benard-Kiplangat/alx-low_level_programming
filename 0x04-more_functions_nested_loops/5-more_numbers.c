@@ -1,9 +1,9 @@
 #include "main.h"
 
-/*
- * more_numbers - prints numbers 1-14 ten times.
- * Alwasy - return 0
- */
+/**
+* more_numbers - check the code
+* Return: Always 0.
+*/
 
 void more_numbers(void)
 {
