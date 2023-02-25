@@ -1,10 +1,9 @@
-#include "main.h"
+nclude "main.h"
 
-/*
- * print_most_numbers - print_most_numbers exlcuding 4 & 2 
- *
- * Always - return 0
- */
+/**
+* print_most_numbers - check the code
+* Return: Always 0.
+*/
 
 void print_most_numbers(void)
 {
