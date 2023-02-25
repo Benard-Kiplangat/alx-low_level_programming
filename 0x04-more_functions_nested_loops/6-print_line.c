@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
-* main - check the c
+* print_line - prints straight line
+* @n: number that defines the lenght of line
 * Return: Always 0.
 */
 void print_line(int n)
