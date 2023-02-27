@@ -1,1 +1,1 @@
-0x05-pointers_arrays_strings
+void reset_to_98(int *n);
