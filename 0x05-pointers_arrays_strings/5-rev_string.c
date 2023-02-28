@@ -3,24 +3,23 @@
 /**
  * rev_string - reverses a string
  * @s: char to check
- * @a: placeholder array
- * @c: for the loop
- * Return: 0 is success
+ *
+ * Return: 0 rs success
  */
 
 void rev_string(char *s)
-{
-	int i = 0;
+	int i = 0, j, c;
+	char d;
 
 	while (s[i] != '\0')
 	{
 		i++;
 	}
-	char a[i];
-	int c = i - 1;
-	for (; c >= 0; c--)
+	c = i - 1;
+	for (j = 0; c >= 0 && j < c; c--, j++)
 	{
-		*a += s[c];
-		*s = *a;
+		d = s[j];
+		s[j] = s[c];
+		s[c] = d;
 	}
 }
