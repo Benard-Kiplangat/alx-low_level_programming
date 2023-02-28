@@ -12,6 +12,6 @@ void puts2(char *strn)
 
 	for (strg = 0; strn[strg] != '\0'; strg++)
 	if (strg % 2 == 0)
-		_putchar(str[string]);
+		_putchar(strn[strg]);
 	_putchar('\n');
 }
