@@ -2,7 +2,8 @@
 
 /**
  * swap_int - check the code 
- * n: pointer to n
+ * a: pointer to a
+ * b: pointer to b
  * Return: Always 0.
  */
 
