@@ -8,14 +8,14 @@
  */
 char *cap_string(char *s)
 {
-	int i, j;
+	int i;
 
 	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
 		'!', '?', '"', '(', ')', '{', '}'};
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (i == 0 && s[i] >= 'a' && s[i] <= 'z' && s[i] != spe[i])
+		if (s[i] >= 'a' && s[i] <= 'z' && s[i] != spe[i])
 			s[i] -= 32;
 	}
 	return (s);
