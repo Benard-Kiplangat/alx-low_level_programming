@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _strstr - the first occurrence of the substring needle in the string haystack
+ * _strstr - the first occurrence of the substring needle
+ * in the string haystack
  * @haystack: main str to be examined
  * @needle: searched char in haystack
  * Return: return 0
