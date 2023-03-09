@@ -1,21 +1,17 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - a function that returns the natural square root of a number
- * @n: the number
- * Return: Square root of n
+ * _pow_recursion - a function that returns the power
+ * @x: the number
+ * @y: the power
+ * Return: the result of power
  */
 
-int _sqrt_recursion(int n)
+int _pow_recursion(int x, int y)
 {
-int i = 1;
-
-if ((i * i) > n)
+if (y < 0)
 	return (-1);
-
-if ((i * i) == n)
-	return (i);
-i++;
-
-_sqrt_recursion(n);
+if (y == 0)
+	return (1);
+return (x * _pow_recursion(x, y - 1));
 }
