@@ -1,0 +1,35 @@
+#!/bin/bash
+
+find -name '1-isdigit' -exec cp -t 0x09-static_libraries {} +
+find -name '0-strcat.c' -exec cp -t 0x09-static_libraries {} +
+find -name '0-isupper.c' -exec cp -t 0x09-static_libraries {} +
+find -name '1-memcpy.c' -exec cp -t 0x09-static_libraries {} +
+find -name '1-strncat.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strchr.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strlen.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strncpy.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-islower.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-puts.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-strcmp.c' -exec cp -t 0x09-static_libraries {} +
+
+find -name '100-atoi.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-strspn.c' -exec cp -t 0x09-static_libraries {} +
+find -name '4-isalpha.c' -exec cp -t 0x09-static_libraries {} +
+find -name '4-strpbrk.c' -exec cp -t 0x09-static_libraries {} +
+find -name '5-strstr.c' -exec cp -t 0x09-static_libraries {} +
+find -name '6-abs.c' -exec cp -t 0x09-static_libraries {} +
+find -name '9-strcpy.c' -exec cp -t 0x09-static_libraries {} +
+find -name '_putchar.c' -exec cp -t 0x09-static_libraries {} +
+
+
+
+find -name '0-strcat.c' -exec cp -t 0x09-static_libraries {} +
+find -name '0-isupper.c' -exec cp -t 0x09-static_libraries {} +
+find -name '1-memcpy.c' -exec cp -t 0x09-static_libraries {} +
+find -name '1-strncat.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strchr.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strlen.c' -exec cp -t 0x09-static_libraries {} +
+find -name '2-strncpy.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-islower.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-puts.c' -exec cp -t 0x09-static_libraries {} +
+find -name '3-strcmp.c' -exec cp -t 0x09-static_libraries {} +
