@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		coins += cents / 1;
+		break;
 	}
 
 	printf("%d\n", coins);
