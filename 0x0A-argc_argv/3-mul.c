@@ -1,8 +1,3 @@
-/*
- * File: 3-mul.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,8 +6,7 @@
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
  *
- * Return: If the program receives two arguments - 0.
- *         If the program does not receive two arguments - 1.
+ * Return: 0 or 1
  */
 int main(int argc, char *argv[])
 {

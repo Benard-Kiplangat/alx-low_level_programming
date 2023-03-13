@@ -1,8 +1,3 @@
-/*
- * File: 1-args.c
- * Auth: Brennan D Baraban
- */
-
 #include <stdio.h>
 
 /**
