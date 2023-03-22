@@ -4,11 +4,11 @@
 /**
  * main - a program that prints the name of the file compiled from
  *
- * Returns: always 0.
+ * Return: always 0.
  */
 
 int main(void)
 {
 	printf("%s\n", __FILE__);
-	return(0);
+	return (0);
 }
