@@ -3,7 +3,7 @@
 
 /**
  * get_op_func - a function that selects the correct function
- * 	to perform an operation.
+ *	to perform an operation.
  * @s: The operator passed as argument.
  *
  * Return: a pointer to the function corresponding to an operator
