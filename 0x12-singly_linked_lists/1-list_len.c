@@ -8,16 +8,13 @@
 
 size_t list_len(const list_t *h)
 {
-size_t i = 0;
+unsigned int i = 0;
 
 while (h)
 {
-	while (h->next)
-	{
 	i++;
 	h = h->next;
-	}
 }
-printf("-> %lu elements\n", i);
-return (0);
+
+return (i);
 }
