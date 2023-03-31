@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * list_len: a function to print the number of elements in a LL
+ * list_len - prints the number of elements in a linked list
  * @h: pointer to the first node
  * Return: always 0
 */
