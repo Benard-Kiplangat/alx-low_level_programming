@@ -15,7 +15,7 @@ unsigned int i = 0;
 if (h == NULL)
 	printf("[0] (nil)");
 
-while (h->next != NULL)
+while (h != NULL)
 {
 	if (h->str == NULL)
 		printf("-> [%u] (nil)\n", h->len);
