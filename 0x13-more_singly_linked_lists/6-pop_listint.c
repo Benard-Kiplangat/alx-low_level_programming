@@ -2,9 +2,8 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - a function that deletes the head 
+ * pop_listint - a function that deletes the head
  * @head: a pointer to the head of node
- *
  * Return: head node's data (n) or 0 if empty
  */
 
