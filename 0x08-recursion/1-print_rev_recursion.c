@@ -2,7 +2,7 @@
 
 /**
  * _print_rev_recursion - a function that prints string characters
- * 			using recursion.
+ *			using recursion.
  * @s: a string pointer to print
  *
  * Return: Always 0
