@@ -6,7 +6,7 @@
  *
  * @n: the number
  *
- * Returns: returns the factorial or -1 if n is lower than 0
+ * Return: returns the factorial or -1 if n is lower than 0
  */
 
 int factorial(int n)
