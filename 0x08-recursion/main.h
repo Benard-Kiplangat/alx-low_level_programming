@@ -10,3 +10,4 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int helper(int n, int lower, int upper);
 int is_prime_helper(int n, int count);
+int is_palin(char *strng, int frst, int end);
