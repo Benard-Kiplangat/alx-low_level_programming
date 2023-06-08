@@ -36,6 +36,8 @@ int helper(int n, int lower, int upper)
 {
 	int middle; /* a number to divide upper and lower for more precision */
 
+	if (n == 1)
+		return (1);
 	if (n < 0)
 		return (-1);
 	if (n == 0)
