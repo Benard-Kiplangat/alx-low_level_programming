@@ -1,5 +1,9 @@
+# 'C' Libraries
+A library in C is a file containing several object files that you can use as a single entity during the linking phase of complilation. It makes it easier to orgarnize your programs, especially when you have a lot of files to compile each time you make changes. Also, this file is indexed, meaning that it is faster than using separate object files on disk.
+ 
 ## Static library libmy.a
-The first task involves creating a libmy.a static library. This library will contain all the following functions:
+The first task involves creating a `libmy.a` static library. This library will contain all the following functions:
+```
 * int _putchar(char c);
 * int _islower(int c);
 * int _isalpha(int c);
@@ -20,13 +24,22 @@ The first task involves creating a libmy.a static library. This library will con
 * unsigned int _strspn(char *s, char *accept);
 * char *_strpbrk(char *s, char *accept);
 * char *_strstr(char *haystack, char *needle);
-
-First, to create a list of object files, compile each file with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c *.c note the -c flag, and *.c to highligh all the c files.
+```
+First, to create a list of object files, compile each file with `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c *.c` note the `-c` flag, used to create object files, and `*.c` to highligh all the c files.
 Next, create the static library with the command ar rc libutil.a. The flag c tells the compiler to create the library if there is none and r to recreate if new files are available.
 Finally, index the library with the command ranlib libmy.a to speed up the time it takes to find symbols(variables, functions, and others) in the library.
 
 ## How to use the static library?
-To use this library in your project, use the command below when compiling new files: gcc main.o -L. -lmy -o prog. This main.o is your new object file that you need to add to your library and build your program.
+To use this library in your project, use the command below when compiling new files: `gcc main.o -L. -lmy -o prog`. This `main.o` is your new object file that you need to add to your library and build your program.
 
-Notice that -L. flag means you are asking the compiler to find the library in the current directory. You also do not need to include lib and the extension .a in -lmy as the compiler will expand it automatically. The -l allows you to use the library archive in your program.
+Notice that `-L.` flag means you are asking the compiler to find the library in the current directory. You also do not need to include the prefix `lib` and the extension `.a` in `-lmy` as the compiler will expand it automatically. The `-l` allows you to use the library archive in your program.
 
+## Task 2: How to create script to create a dynamic library
+This second script create_static_lib.sh will create a dynamic library called liball.a. Here are the contents of the script:
+```
+#!/bin/bash
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -c *.c;
+ar rc liball.a *.o;
+ranlib liball.a;
+```
