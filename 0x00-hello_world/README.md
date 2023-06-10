@@ -23,4 +23,16 @@ Typical usage:
 ```
 cpp yourfile.c -o fileoutput
 ```
+## C-Hello World Programs
+This folder contains the following shell scripts and C programs:
+--> Note: $CFILE is a variable to main.c file.
+* 0-preprocessor - a script that runs a C file through the preprocessor, saving the result into another file.
+* 1-compiler - a script that compiles a C file but does not link to produce .o files.
+* 2-assembler - a script that generates the assembly code of a C code then save it to a file. The output file will have the extension .s.
+* 3-name - a script that compiles a C file and creates an executable called `cisfun`
+* 4-puts.c - a C program that prints `"Programming is like building a multilingual puzzle` as it is, followed by a new line.
+* 5-printf.c - a C program that prints `with proper grammar, but the outcome is a piece of art,` as it is, followed by a new line, using the printf function.
+* 6-size.c - a C program that prints the size of various C-types.
+* 100-intel.c - a C program that generates assembly code(intel syntax) of a C code. The output file should have .s extension.
+* 101-quote.c - a C program that prints exactly `and that piece of art is useful" - Dora Korpar, 2015-10-19` followed by a new line to the standard error.
 
