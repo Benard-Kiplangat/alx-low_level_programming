@@ -13,6 +13,7 @@ From there, your program can recieve your command line arguments, like the follo
 ```
 ** where ./myprogram, a, b, and c are arguments captured in argv and 4 is the total number of arguments passed as argc
 
+## What is contained in this 0x0A-argc_argv folder
 The programs in this folder include the following:
 * 0-whatsmyname.c - a program that prints its name followed by newline.
 * 1-args.c - a program that prints the number of arguments passed into it.
