@@ -11,7 +11,7 @@ From there, your program can recieve your command line arguments, like the follo
 ```
 ./myprogram a b c
 ```
-	where ./myprogram, a, b, and c are arguments captured in argv and 4 is the total number of arguments passed as argc
+** where ./myprogram, a, b, and c are arguments captured in argv and 4 is the total number of arguments passed as argc
 
 The programs in this folder include the following:
 * 0-whatsmyname.c - a program that prints its name followed by newline.
