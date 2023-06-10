@@ -1,18 +1,19 @@
 # argc and argv
-`int argc` and `char *argv[]` are arguments of the main function in C. They allow you to pass information to the program through the command line. An example include the following:
-* ./myprog a b c
+`int argc` and `char *argv[]` are arguments of the main function in C. They allow you to pass information to the program through the command line. `argc` includes the total number of arguments passed into the program, including the program's name. 
 
-a, b, and c are examples of the arguments of the gcc command. The typical implementation of `argc` and `argv` is like the following:
+`*argv[]` is a null pointer to all the arguments as strings, with `*argc[0]` as the name of the program. When passed to the program, a null pointer to the address of the first element is passed. Therefore, it can also be represented as `char **argv` argument to the main.
+
+The typical implementation of `argc` and `argv` is like the following:
 ```
-#include <stdio.h>
-
 int main(int argc, char *argv[])
-{
-	...
-	return 0;
-}
 ```
+From there, your program can recieve your command line arguments, like the following:
+```
+./myprogram a b c
+```
+** where ./myprogram, a, b, and c are arguments captured in argv and 4 is the total number of arguments passed as argc
 
+## What is contained in this 0x0A-argc_argv folder
 The programs in this folder include the following:
 * 0-whatsmyname.c - a program that prints its name followed by newline.
 * 1-args.c - a program that prints the number of arguments passed into it.
