@@ -27,9 +27,8 @@ int main(int argc, char *argv[])
 			coins += atoi(argv[1]) / coinvalues[i];
 			ammount = atoi(argv[1]) % coinvalues[i];
 			i++;
-		}
-		while (ammount != 0);
-		printf("%d\n", coins);
+		} while (ammount != 0);
+	printf("%d\n", coins);
 	}
 	else
 	{
