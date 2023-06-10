@@ -21,11 +21,12 @@ int main(int argc, char *argv[])
 
 	if (argcount == 2)
 	{
-		if (atoi(argv[1]) < 0)
+		ammount = atoi(argv[1]);
+		if (ammount < 0)
 			printf("0\n");
 		do {
-			coins += atoi(argv[1]) / coinvalues[i];
-			ammount = atoi(argv[1]) % coinvalues[i];
+			coins += ammount / coinvalues[i];
+			ammount = ammount % coinvalues[i];
 			i++;
 		} while (ammount != 0);
 	printf("%d\n", coins);
