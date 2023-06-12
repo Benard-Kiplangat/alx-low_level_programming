@@ -38,7 +38,11 @@ char *str_concat(char *s1, char *s2)
 	int size1 = strsize(s1);
 	int size2 = strsize(s2);
 	int totalsize = size1 + size2;
-	char *nwstrptr = (char *)malloc(sizeof(char) * totalsize);
+	char *nwstrptr;
+
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	nwstrptr = (char *)malloc(sizeof(char) * (totalsize + 1));
 
 	if (totalsize == 0 || nwstrptr == NULL)
 		return (NULL);
