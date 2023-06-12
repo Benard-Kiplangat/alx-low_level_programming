@@ -14,6 +14,8 @@ int strsize(char *strptr)
 {
 	int size = 0;
 
+	if (strptr == NULL)
+		return (0);
 	while (strptr[size] != '\0')
 		size++;
 	return (size);
@@ -51,5 +53,6 @@ char *str_concat(char *s1, char *s2)
 		i++;
 		i2++;
 	}
+	nwstrptr[i + 1] = '\0';
 	return (nwstrptr);
 }
