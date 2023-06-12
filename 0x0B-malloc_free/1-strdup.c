@@ -14,21 +14,21 @@ char *_strdup(char *str)
 {
 	int size = 0;
 
-	if (str == NULL)
-		return (NULL);
 	while (str[size] != '\0')
 	{
 		size++;
 	}
-	if (size > 0)
+	if (size >= 0)
 	{
 		char *strcpy = (char *)malloc(sizeof(char) * (size + 1));
 		int size2 = 0;
 
+		if (strcpy == NULL)
+			return (NULL);
 		if (size == 0)
 		{
 			strcpy[0] = '\0';
-			return strcpy;
+			return (strcpy);
 		}
 		while (size2 < size)
 		{
