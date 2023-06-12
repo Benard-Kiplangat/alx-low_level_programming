@@ -25,6 +25,11 @@ char *_strdup(char *str)
 		char *strcpy = (char *)malloc(sizeof(char) * (size + 1));
 		int size2 = 0;
 
+		if (size == 0)
+		{
+			strcpy[0] = '\0';
+			return strcpy;
+		}
 		while (size2 < size)
 		{
 			strcpy[size2] = str[size2];
