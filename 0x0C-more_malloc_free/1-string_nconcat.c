@@ -38,11 +38,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (ni = 0; ni < i; ni++)
 		strn[ni] = s1[ni];
 
-	for (nj = 0; ni < (i + j); nj++)
+	for (nj = 0; ni <= (i + j); nj++)
 	{
 		strn[ni] = s2[nj];
 		ni++;
 	}
+	strn[ni] = '\0';
 
 	return (strn);
 }
