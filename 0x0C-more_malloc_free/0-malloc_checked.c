@@ -9,15 +9,12 @@
  * Return: a pointer to the allocated memory or 98
  */
 
-void *malloc_checked(unsigned int b)
+void *malloc_checked(unsigned long int b)
 {
-	unsigned int *intptr;
-
-	intptr = malloc(sizeof(int));
+	unsigned int *intptr = malloc(b);
 
 	if (intptr == NULL)
 		exit(98);
 
-	*intptr = b;
 	return (intptr);
 }
