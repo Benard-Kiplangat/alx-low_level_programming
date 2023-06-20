@@ -4,7 +4,7 @@
 This repository contains programs written for the low-level programming and algorithm section .
 
 ## Structure
-- 0x00. C - Hello, World
+- [0x00. C - Hello, World](/0x00-hello_world)
 - 0x01. C - Variables, if, else, while
 - 0x02. C -Functions_nested_loops
 - 0x03. C-Debugging
@@ -14,8 +14,6 @@ This repository contains programs written for the low-level programming and algo
 - 0x07. C - Even more pointers, arrays and strings
 - 0x08. C - Recursion
 - 0x09. C - Static libraries
-- 0x10. C - Variadic functions
-- 0x11. C - Printf
 - 0x0A. C - argc, argv
 - 0x0B. C - malloc, free
 - 0x0C. C - more malloc, free
@@ -33,18 +31,17 @@ Working with this project require you to have some tools installed:
 To access any project you are willing to view, please proceed like this:
 
 ### clone the repository
+git clone https://github.com/benard-kiplangat/alx-low_level_programming
 
-```
-  - git clone https://github.com/dennisnderitu254/alx-low_level_programming
-  - cd alx-low_level_programming
-open your desired project (we take Hello world project as example)
+cd alx-low_level_programming
 
-  - cd [0x00. C - Hello, World](./0x00-hello_world)
-test your desired file
+### open your desired project (we take Hello world project as example)
+cd [0x00. C - Hello, World](./0x00-hello_world)
 
-  - gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-puts.c 4-puts
-  - ./4-puts
-```
+### Test your desired file
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-puts.c 4-puts
+
+./4-puts
 
 *** Repeat with other files or projects ***
 
@@ -54,5 +51,5 @@ All work contained in this project was completed as part of the curriculum for A
 ## Credits
 For more information, visit these links.
 
-* ALX
-* Holberton School
+* [ALX](alx.com)
+* [Holberton School](holberton.com)
