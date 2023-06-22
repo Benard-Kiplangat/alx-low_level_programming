@@ -12,7 +12,9 @@
  * Return: a pointer to the function selected
  */
 
-op_t ops[] = {
+int (*get_op_func(char *s))(int, int)
+{
+	op_t ops[] = {
 	{"+", op_add},
 	{"-", op_sub},
 	{"*", op_mul},
@@ -20,15 +22,17 @@ op_t ops[] = {
 	{"%", op_mod},
 	{NULL, NULL}
 };
-
-int (*get_op_func(char *s))(int, int)
-{
 	int i = 0;
 
 	while (i < 5)
 	{
-		if (ops[i].op == s)
-			return (*(ops[i].f));
+		int (*funcrtn)(int, int);
+
+		if (*(ops[i].op) == *s)
+		{
+			funcrtn = ops[i].f;
+			return (funcrtn);
+		}
 		i++;
 	}
 	return (0);

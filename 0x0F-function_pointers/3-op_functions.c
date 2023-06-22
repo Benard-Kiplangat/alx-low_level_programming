@@ -2,7 +2,7 @@
 
 /**
  * op_add - a function that sums two integers
- * 
+ *
  * @a: integer a
  * @b: integer b
  *
@@ -19,7 +19,7 @@ int op_add(int a, int b)
  *
  * @a: integer a
  * @b: integer b
- * 
+ *
  * Return: subtraction of a and b
  */
 
@@ -33,7 +33,7 @@ int op_sub(int a, int b)
  *
  * @a: integer a
  * @b: integer b
- * 
+ *
  * Return: multiplication of a and b
  */
 
@@ -46,7 +46,7 @@ int op_mul(int a, int b)
  *
  * @a: integer a
  * @b: integer b
- * 
+ *
  * Return: division of a and b
  */
 
