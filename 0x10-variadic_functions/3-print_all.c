@@ -17,7 +17,7 @@ void print_all(const char * const format, ...)
 	char *str;
 	char args[4] = "icfs";
 
-	va_start(valist, format);
+	va_start(ap, format);
 
 	while (format != NULL && format[i] != NULL)
 	{
