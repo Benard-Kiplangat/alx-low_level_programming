@@ -13,17 +13,17 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	unsigned int i = 0, j = 0, k = 0;
+	unsigned int i = 0, j, k = 0;
 	char *str;
-	char args[4] = "icfs";
+	const char argss[] = "cifs";
 
 	va_start(ap, format);
-
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
-		while (args[j])
+		j = 0;
+		while (argss[j])
 		{
-			if (format[i] == args[j] && k)
+			if (format[i] == argss[j] && k)
 			{
 				printf(", ");
 				break;
@@ -31,21 +31,17 @@ void print_all(const char * const format, ...)
 		}
 		switch (format[i])
 		{
-		case 'i':
-			k = 1;
-			printf("%i", va_arg(ap, int));
-			break;
 		case 'c':
-			k = 1;
-			printf("%c", va_arg(ap, int));
+			printf("%c", va_arg(ap, int)), k = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(ap, int)), k = 1;
 			break;
 		case 'f':
-			k = 1;
-			printf("%f", va_arg(ap, double));
+			printf("%f", va_arg(ap, double)), k = 1;
 			break;
 		case 's':
-			k = 1;
-			str = va_arg(ap, char *);
+			str = va_arg(ap, char *), k = 1;
 			if (!str)
 			{
 				printf("(nil)");
@@ -55,6 +51,5 @@ void print_all(const char * const format, ...)
 			break;
 		} i++;
 	}
-	
 	printf("\n"), va_end(ap);
 }
