@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 char *opcodes = (char *)main;
-int i, bytes;
+int i = 0, bytes;
 
 if (argc != 2)
 {
@@ -29,11 +29,12 @@ if (bytes < 0)
 	exit(2);
 }
 
-for (i = 0; i < bytes; i++)
+while (i < bytes)
 {
 	printf("%02x", opcodes[i] & 0xFF);
 	if (i != bytes - 1)
 		printf(" ");
+	i++;
 }
 
 printf("\n");
