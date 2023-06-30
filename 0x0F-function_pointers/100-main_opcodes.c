@@ -25,8 +25,8 @@ bytes = atoi(argv[1]);
 
 if (bytes < 0)
 {
-    	printf("Error\n");
-    	exit(2);
+	printf("Error\n");
+	exit(2);
 }
 
 for (i = 0; i < bytes; i++)
@@ -36,5 +36,6 @@ for (i = 0; i < bytes; i++)
 		printf(" ");
 }
 
+printf("\n");
 return (0);
 }
