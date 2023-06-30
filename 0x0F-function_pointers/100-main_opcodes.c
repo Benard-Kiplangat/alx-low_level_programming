@@ -9,11 +9,10 @@
  * Return: Always 0.
  */
 
-
 int main(int argc, char *argv[])
 {
-char *opcodes = (char *)main;
-int i = 0, bytes;
+char *opcod = (char *)main;
+int i = 0, kbytes;
 
 if (argc != 2)
 {
@@ -21,18 +20,18 @@ if (argc != 2)
 	exit(1);
 }
 
-bytes = atoi(argv[1]);
+kbytes = atoi(argv[1]);
 
-if (bytes < 0)
+if (kbytes < 0)
 {
 	printf("Error\n");
 	exit(2);
 }
 
-while (i < bytes)
+while (i < kbytes)
 {
-	printf("%02x", opcodes[i] & 0xFF);
-	if (i != bytes - 1)
+	printf("%02x", opcod[i] & 0xFF);
+	if (i != kbytes - 1)
 		printf(" ");
 	i++;
 }
