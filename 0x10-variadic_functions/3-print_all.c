@@ -10,46 +10,47 @@
  * Return: nothing
  */
 
-void print_char(char c)
-{
-	printf("%c", c);
-}
-
-void print_int(int a)
-{
-	printf("%i", a);
-}
-
-void print_float(float a)
-{
-	printf ("%f", a);
-}
-
-void print_string(char *s)
-{
-	printf("%s", s);
-}
-
 void print_all(const char * const format, ...)
 {
-	va_list pa;
-	int i = 0;
+	va_list ap;
+	unsigned int i = 0, j = 0;
+	char *str;
+	char args[4] = "icfs";
 
-	va_start(pa, format);
+	va_start(valist, format);
 
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != NULL)
 	{
-		if (format[i] == 'c')
-			print_char(va_arg(pa, int));
-		if (format[i] == 'i')
-			print_int(va_arg(pa, int));
-		if (format[i] == 'f')
-			print_float(va_arg(pa, double));
-		if (format[i] == 's')
-			print_string(va_arg(pa, char *));
-		if (format[i + 1] != '\0')
-			printf(", ");
-		i++;
+		while (args[j])
+		{
+			if (format[i] == args[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
+		}
+		switch (format[i])
+		{
+		case 'i':
+			printf("%i", va_arg(ap, int));
+			break;
+		case 'c':
+			printf("%c", va_arg(ap, int));
+			break;
+		case 'f':
+			printf("%f", va_arg(ap, double));
+			break;
+		case 's':
+			str = va_arg(ap, char *);
+			if (!str)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+		} i++;
 	}
-	printf("\n");
+	
+	printf("\n"), va_end(ap);
 }
