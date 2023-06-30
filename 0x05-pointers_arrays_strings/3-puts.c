@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _puts - prints a string
+ * _puts - a function that prints a string
  * @str: The string to be printed
  * Return: The length of the string
  */
 
 void _puts(char *strng)
 {
-	int i;
+	int i = 0;
 
 	while (strng[i] != '\0')
 	{
