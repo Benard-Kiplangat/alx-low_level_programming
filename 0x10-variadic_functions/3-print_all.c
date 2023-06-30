@@ -13,7 +13,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	unsigned int i = 0, j = 0;
+	unsigned int i = 0, j = 0, k = 0;
 	char *str;
 	char args[4] = "icfs";
 
