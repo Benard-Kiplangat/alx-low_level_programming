@@ -11,31 +11,30 @@
 
 int main(int argc, char *argv[])
 {
-char *opcod = (char *)main;
-int i = 0, kbytes;
+	char *opc = (char *) main;
+	int i, nbytes;
 
-if (argc != 2)
-{
-	printf(Error\n");
-	exit(1);
-}
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-kbytes = atoi(argv[1]);
+	nbytes = atoi(argv[1]);
 
-if (kbytes < 0)
-{
-	printf("Error\n");
-	exit(2);
-}
+	if (nbytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-while (i < kbytes)
-{
-	printf("%02x", opcod[i] & 0xFF);
-	if (i != kbytes - 1)
-		printf(" ");
-	i++;
-}
+	for (i = 0; i < nbytes; i++)
+	{
+		printf("%02x", opc[i] & 0xFF);
+		if (i != nbytes - 1)
+			printf(" ");
+	}
 
-printf("\n");
-return (0);
+	printf("\n");
+	return (0);
 }
