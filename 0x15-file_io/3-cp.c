@@ -11,8 +11,9 @@
 
 int main(int argc, char **argv)
 {
-	char *buffer = malloc(sizeof(char) * 1024);
-	size_t opn, opn2, i = 0, j = 0;
+	char buff[10000];
+	int cnt = 0, strt = 0;
+	size_t opn, opn2, sz, sopn, sopn2;
 
 	if (argc != 3)
 	{
@@ -20,41 +21,44 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	if (access(argv[2], F_OK) == 0)
-	{
-		opn = open(argv[1], 1024 * 5);
+	sopn = open(argv[1], O_RDONLY);
 
-		while (argv[1][i] != '\0')
+	if (access(argv[1], F_OK) == 0)
+	{
+		if (sopn <= 0)
+			return (-1);
+
+		sopn2 = read(sopn, buff, 10000);
+
+		cnt = (int)sopn2;
+		opn = open(argv[2], O_WRONLY | O_TRUNC);
+
+		while (cnt > 0)
 		{
-			for (; argv[1][i] != '\0' || i < 1024; i++)
-			{
-				if (i == 1023)
-				{
-					buffer[i + 1] = '\0';
-					j = 0;
-					break;
-				}
-				buffer[j] = argv[1][i];
-				j++;
-			}
-			opn2 = write(opn, buffer, O_TRUNC | O_WRONLY);
+			sz = cnt >= 1024 ? 1024 : cnt;
+			opn2 = write(opn, buff + strt, sz);
 			if (opn2 <= 0)
 			{
 				dprintf(2, "Error: Can't write to %s\n", argv[2]);
 				exit(99);
 			}
-			if (close(opn) < 0)
-			{
-				dprintf(2, "Error: Can't close %li\n", opn);
-				exit(100);
-			}
+			printf("Count: %i\n", cnt);
+			cnt = cnt - 1024;
+			strt = strt + sz;
+		}
+	}
 	else
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
-}
-}
-return (0);
+	if (close(opn) != 0)
+	{
+		dprintf(2, "Error: Can't close %li\n", opn);
+		exit(100);
+	}
+	close(sopn);
+	close(sopn2);
+	close(opn2);
+	return (0);
 }
