@@ -1,64 +1,80 @@
 #include "main.h"
 
 /**
- * cp - a program that copies the content of a file to another file
+ * main - a program that prints copies the content of a file to another file
  *
- * argc - the number of arguments passed
- * argv: an array containing all the arguments
+ * @argc: the number of arguments passed
+ * @argv: an array containing all the arguments
  *
  * Return: 0 on success and -1 on failure
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	char buff[10000];
-	int cnt = 0, strt = 0;
-	size_t opn, opn2, sz, sopn, sopn2;
+	int c, from, to, rd, w;
+	char *buffer;
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	sopn = open(argv[1], O_RDONLY);
+	buffer = malloc(sizeof(char) * 1024);
 
-	if (access(argv[1], F_OK) == 0)
+	if (buffer == NULL)
 	{
-		if (sopn <= 0)
-			return (-1);
+		dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 
-		sopn2 = read(sopn, buff, 10000);
+	from = open(argv[1], O_RDONLY);
 
-		cnt = (int)sopn2;
-		opn = open(argv[2], O_WRONLY | O_TRUNC);
+	rd = read(from, buffer, 1024);
 
-		while (cnt > 0)
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
+	do {
+		if (from == -1 || rd == -1)
 		{
-			sz = cnt >= 1024 ? 1024 : cnt;
-			opn2 = write(opn, buff + strt, sz);
-			if (opn2 <= 0)
-			{
-				dprintf(2, "Error: Can't write to %s\n", argv[2]);
-				exit(99);
-			}
-			printf("Count: %i\n", cnt);
-			cnt = cnt - 1024;
-			strt = strt + sz;
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
 		}
-	}
-	else
+
+		w = write(to, buffer, rd);
+
+		if (to == -1 || w == -1)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
+
+		rd = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
+
+	} while (rd > 0);
+
+	free(buffer);
+
+	c = close(to);
+
+	if (c == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	if (close(opn) != 0)
-	{
-		dprintf(2, "Error: Can't close %li\n", opn);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", to);
 		exit(100);
 	}
-	close(sopn);
-	close(sopn2);
-	close(opn2);
+
+	c = close(from);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", from);
+		exit(100);
+	}
 	return (0);
 }
