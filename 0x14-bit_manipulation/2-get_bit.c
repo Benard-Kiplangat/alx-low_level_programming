@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_bit: a function that returns a value of a given index
+ * get_bit - a function that returns a value of a given index
  *
  * @n: the the number to check the value
  * @index: the index
@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int i;
 
-	if (index > (sizeof(8) * 8))
+	if (index > (sizeof(unsigned long int) * 8))
 		return (-1);
 
 	for (i = 0; i < index; i++)
