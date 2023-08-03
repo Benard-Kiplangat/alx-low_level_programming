@@ -4,6 +4,7 @@
  * set_bit - a function that sets the value of a bit to 1 at a given index
  *
  * @n: the value to set at index to replace in the number
+ * @index: the index of the bit to set
  *
  * Return: 1 if it works or -1 if on error
  */
