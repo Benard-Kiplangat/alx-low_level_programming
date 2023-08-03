@@ -2,12 +2,10 @@
 
 /**
  * print_binary - a function that converts and prints ints to binary
- *
  * @n: the integer to convert
  *
  * Return: nothing
  */
-
 void print_binary(unsigned long int n)
 {
 	unsigned int i = 0;
