@@ -6,24 +6,32 @@
  *
  * Return: nothing
  */
+
 void print_binary(unsigned long int n)
 {
-	unsigned int i = 0;
-	int arr[64];
 
-	if (n == 0)
-		printf("0");
+	unsigned long int num = n;
+	unsigned long int mask = 1;
+	int len = 0;
 
-	while (n)
+	while (num > 0)
 	{
-		arr[i] = n & 1;
-		n = n >> 1;
-		i++;
+		len++;
+		num >>= 1;
 	}
 
-	while (i)
+	len -= 1;
+
+	if (len > 0)
+		mask = mask << len;
+
+	while (mask > 0)
 	{
-		i--;
-		printf("%u", arr[i]);
+		if (n & mask)
+			printf("1");
+		else
+			printf("0");
+
+		mask >>= 1;
 	}
 }
