@@ -16,18 +16,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *k = *h;
 
-	nwnode = malloc(sizeof(dlistint_t));
+	if (k == NULL)
+		return (NULL);
 
+	nwnode = malloc(sizeof(dlistint_t));
+	nwnode->n = n;
 	if (nwnode == NULL)
 	{
 		dprintf(2, "Error: Can't malloc\n");
 		return(NULL);
 	}
-	nwnode->n = n;
 	for (i = 0; k != NULL && i < idx; i++)
 		k = k->next;
-	if (k == NULL && i < idx)
-		return (NULL);
 	nwnode->next = k;
 	nwnode->prev = k->prev->prev;
 	k->prev->next = nwnode;
