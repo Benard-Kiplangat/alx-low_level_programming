@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <string.h>
 
 /**
  * hash_table_get - a function that retrieves the value of a key
@@ -22,7 +23,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	for (; temp != NULL; temp = temp->next)
 	{
 		if (strcmp(temp->key, key) == 0)
-			return (var->value);
+			return (temp->value);
 	}
 	return (NULL);
 }
